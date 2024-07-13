@@ -9,7 +9,7 @@ $$
 \end{align}
 $$
 #### Dimostrazione
-Sia $x=(-1)^s\beta^p\alpha$. L'errore **assoluto** $|x-trn(x)|$ è maggiorato dalla distanza di due numeri di maccina **consecutivi**, per cui si ha
+Sia $x=(-1)^s\beta^p\alpha$. L'errore **assoluto** $|x-trn(x)|$ è maggiorato dalla distanza di due numeri di macchina **consecutivi**, per cui si ha
 $$
 \begin{align}
     |trn(x)-x|\leq\beta^{p-t} \tag{1}
@@ -54,7 +54,7 @@ $$
     \sum_{j=1}^na_{i,j}x_j = \lambda x_i\ \ \forall\ 1\leq i\leq n\tag{1}
 \end{align*}
 $$
-Estraendo dalla sommatoria l'elemento digonale rimane
+Estraendo dalla sommatoria l'elemento diagonale rimane
 $$
 \begin{align*}
     \sum_{j=1,\ j\neq i}^na_{i,j}x_j + a_{i,i}x_i &= \lambda x_i&& \forall\ 1\leq i\leq n\tag{2.1}\\
@@ -88,7 +88,7 @@ Da cui la tesi
 Data $A\in\R^{n\times n}$. Se $A(1:k, 1:k)$ e' invertibile $\forall\ 1\leq k\leq n-1$ allora esiste unica ($\exist!$) $LU$ di $A$ 
 #### Dimostrazione
 Per induzione su $n$
-1. Per $n=1$ si ha $A=[a]=[1][a]$ unica fattoruzzazione $LU$ di $A$
+1. Per $n=1$ si ha $A=[a]=[1][a]$ unica fattorizzazione $LU$ di $A$
 2. Supponiamo la veridicita' del teorema per $A$ di ordine $m\leq n-1$
 3. Costruiamo $LU$ per $A$ di ordine $n$
 
@@ -125,10 +125,13 @@ Per ipotesi $A(1:n-1,1:n-1)$ invertibile e per tale motivo $\exist!LU$ con fatto
 - $L(1:n-1,1:n-1)$ 
 - $U(1:n-1,1:n-1)$ 
 
-Sempre dall'invertibillita' di $A(1:n-1,1:n-1)$ segue che 
+Sempre dall'invertibilita' di $A(1:n-1,1:n-1)$ segue che 
 1. $L(1:n-1,1:n-1)$ e' invertibile per costruzione
 2. $U(1:n-1,1:n-1)$ e' invertibile
-    > $\det(A)=\det(LU)=\det(L)*\det(U)$ e poiche' $\det(L)=1$ per costruzione. Segue che $\det(A)=\det(U)$, se $\det(A)\neq 0\implies\det(U)\neq 0$
+    
+    > [!IMPORTANT]
+    >
+    > $\det(A)=\det(LU)=\det(L)*\det(U)$ e $\det(L)=1$ per costruzione. Segue che $\det(A)=\det(U)$, se $\det(A)\neq 0\implies\det(U)\neq 0$
 
 Di conseguenza le equazioni $(2)$ e $(3)$ del teorema ammetto unica soluzione. Anche l'equazione $(4)$ ammette unica soluzione poiche' conseguenza delle equazioni precedenti
 
@@ -160,14 +163,17 @@ $$
 \end{align*}
 $$
 Stando alla relazione $(2)$ e' facile dimostrare che
-$$
-\begin{align*}
-    e^{(k+1)}&=Pe^{(k)}\\
-    &=P(Pe^{(k-1)})\\
-    &=P(\underbrace{P*P*\dots*P}_{\text{k volte}}\ e^{(0)})\\
-    &= P^{k+1}e^{(0)}
-\end{align*}
-$$
+
+> [!IMPORTANT]
+> $$
+> \begin{align*}
+>     e^{(k+1)}&=Pe^{(k)}\\
+>     &=P(Pe^{(k-1)})\\
+>     &=P(\underbrace{P*P*\dots*P}_{\text{k volte}}\ e^{(0)})\\
+>     &= P^{k+1}e^{(0)}
+> \end{align*}
+> $$
+
 Passando alla norma
 $$
 \begin{align*}
@@ -175,6 +181,8 @@ $$
 \end{align*}
 $$
 
+> [!TIP]
+>
 > Poiche' $\|P\|<1$ per ipotesi del teorema, $\lim_{k\to\infty}\|P\|^{k+1}\|e^{(0)}\|=0$ e per costruzione del teorema $0\leq \|e^{(k+1)}\|$
 
 Segue dal teorema del confronto che $\forall e^{(0)}$ o, equivalentemente, $\forall x^{(0)}$
