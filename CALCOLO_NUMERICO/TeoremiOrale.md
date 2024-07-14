@@ -28,7 +28,7 @@ $\epsilon_{tot}=\epsilon_{in}+\epsilon_{alg}$
 $$
 \begin{align*}
     \epsilon_{tot} &=\frac{g(\tilde{x}) - f(x)}{f(x)} \tag{1}\\ \\
-    &=\underbrace{\frac{g(\tilde{x})-f(\tilde{x})}{f(\tilde{x})}}_{\epsilon_{alg}}\underbrace{\frac{f(\tilde{x})}{f(x)}}_{(1+\epsilon_x)}+\underbrace{\frac{f(\tilde{x})-f(x)}{f(x)}}_{\epsilon_{in}}\tag{2}\\ \\
+    &=\underbracket{\frac{g(\tilde{x})-f(\tilde{x})}{f(\tilde{x})}}_{\epsilon_{alg}}\underbracket{\frac{f(\tilde{x})}{f(x)}}_{(1+\epsilon_x)}+\underbracket{\frac{f(\tilde{x})-f(x)}{f(x)}}_{\epsilon_{in}}\tag{2}\\ \\
     &=\epsilon_{alg}(1+\epsilon_x)+\epsilon_{in}\\
     &\doteq\epsilon_{alg}+\epsilon_{in}\tag{3}
 \end{align*}
@@ -128,7 +128,7 @@ Per ipotesi $A(1:n-1,1:n-1)$ invertibile e per tale motivo $\exist!LU$ con fatto
 Sempre dall'invertibilita' di $A(1:n-1,1:n-1)$ segue che 
 1. $L(1:n-1,1:n-1)$ e' invertibile per costruzione
 2. $U(1:n-1,1:n-1)$ e' invertibile
-    
+   
     > [!IMPORTANT]
     >
     > $\det(A)=\det(LU)=\det(L)*\det(U)$ e $\det(L)=1$ per costruzione. Segue che $\det(A)=\det(U)$, se $\det(A)\neq 0\implies\det(U)\neq 0$
@@ -144,6 +144,8 @@ $$
     x^{(k+1)}=Px^{(k)}+q&&k\geq 0&&(2)
 \end{cases}
 $$
+> [!NOTE]
+>
 > Con $P=M^{-1}N$, $\ q=M^{-1}b$, $\ A=M-N$
 
 Il metodo converse se esiste ($\exist$) una norma matriciale indotta su $\R^n$ t.c. $\|P\|<1$
@@ -158,7 +160,7 @@ $$
 E sottratte tra di loro
 $$
 \begin{align*}
-    \underbrace{x^{(k+1)}-x}_{e^{k+1}}&=\underbrace{P(x^{(k)}-x)}_{Pe^{k}}\\ \\
+    \underbracket{x^{(k+1)}-x}_{e^{k+1}}&=\underbracket{P(x^{(k)}-x)}_{Pe^{k}}\\ \\
     e^{(k+1)}&=Pe^{(k)}\tag{2}
 \end{align*}
 $$
@@ -169,7 +171,7 @@ Stando alla relazione $(2)$ e' facile dimostrare che
 > \begin{align*}
 >     e^{(k+1)}&=Pe^{(k)}\\
 >     &=P(Pe^{(k-1)})\\
->     &=P(\underbrace{P*P*\dots*P}_{\text{k volte}}\ e^{(0)})\\
+>     &=P(\underbracket{P*P*\dots*P}_{\text{k volte}}\ e^{(0)})\\
 >     &= P^{k+1}e^{(0)}
 > \end{align*}
 > $$
@@ -181,7 +183,7 @@ $$
 \end{align*}
 $$
 
-> [!TIP]
+> [!IMPORTANT]
 >
 > Poiche' $\|P\|<1$ per ipotesi del teorema, $\lim_{k\to\infty}\|P\|^{k+1}\|e^{(0)}\|=0$ e per costruzione del teorema $0\leq \|e^{(k+1)}\|$
 
@@ -201,15 +203,117 @@ $$
     x^{(k+1)}=Px^{(k)}+q&&k\geq 0&&(2)
 \end{cases}
 $$
+> [!NOTE]
+>
 > Con $P=M^{-1}N$, $\ q=M^{-1}b$, $\ A=M-N$
 
 Se $\rho(P)<1$ allora il metodo e' convergente
+> [!NOTE]
+>
 > Dove $\rho(A) = \max_i|\lambda_i|$ con $\lambda_1, \lambda_2, \dots, \lambda_n$ autovalori di $A$ e' detto **raggio spettrale di $A$**
 
 ---
 ### Teorema 6.3.1 - Convergenza di Jacobi e Gauss-Seidel
 
+Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale allora
+
+> [!NOTE]
+>
+> Una matrice $A\in\R^{n\times n}$ si dice **predominante diagonale** se $\forall_i\ 1\leq i\leq n\ \ |a_{i,i}| > \sum_{j=1,\ j\neq i}^n|a_{i,j}|$ ovvero: i moduli degli elementi diagonali sono maggiori della somma dei moduli di ogni riga
+
+1. $A$ e' invertibile
+
+2. **Jacobi** e **Gauss-Seidel** sono applicabili
+
+   > [!note]
+   >
+   > I due metodi sono applicabili se $\forall_i\ 1\leq i\leq n\ \ a_{i,i}\neq0$
+
+3. **Jacobi** e **Gauss-Seidel** sono convergenti
+
 #### Dimostrazione
+
+1. L'invertibilita' di $A$ segue da ***Gershgorin*** infatti vale
+   $$
+   \begin{align*}
+   |0-a_{i,i}| = |a_{i,i}| < \sum_{j=1,\ j\neq i}^n|a_{i,j}| &&&&\forall_i\ 1\leq i\leq n
+   \end{align*}
+   $$
+   Ma per definizione di **predominanza diagonale** le equazioni cosi' costruite non vengono mai verificate, per cui $0\notin\bigcup_{i=1}^nK_i$
+
+2. L'applicabilita' di **Jacobi** e **Gauss-Seidel** si ha poiche'
+   $$
+   \begin{align*}
+   |a_{i,i}| > \sum_{j=1,\ j\neq i}^n|a_{i,j}| \implies a_{i,i} \neq 0 &&&&\forall_i\ 1\leq i\leq n
+   \end{align*}
+   $$
+
+   > [!TIP]
+   >
+   > Prendiamo $|a| > |b| + \dots + |z|$ supponendo che la somma sia $0$ questo implica che $|a|>0 \implies a\neq0$. Infatti una matrice che ha almeno uno $0$ sulla diagonale principale sicuramente **non** e' predominante diagonale. Unendo questo ragionamento all'applicabilita' di Jacobi e GS si ottiene che per $A$ predominanti diagonali i due metodi sono sempre applicabili
+
+3. Per dimostrare la convergenza di **Jacobi** e **Gauss-Seidel** su matrici predominanti diagonali studiamo il polinomio caratteristico della matrice $P$
+
+   > [!NOTE]
+   >
+   > - Per Jacobi $M = D$ e $N = L+U$ ($M$ e' la diagonale di $A$, $N$​ quello che resta cambiato di segno) 
+   > - Per Gauss-Seidel $M = D - L$ e $N = U$ ($M$ e' la parte triangolare inferiore di $A$, $N$ quello che resta cambiato di segno)
+   >
+   > Per entrambi $P = M^{-1}N$ 
+
+   $$
+   \begin{align*}
+   \det(P-\lambda I_n) &= &&&& \text{Formula del polinomio caratteristico di }P\\
+   &=\det(M^{-1}N-\lambda MM^{-1}) &&&& \text{Riscrivo $P$ e $I$ in funzione di $M$}\\
+   &=\det(M^{-1})\det(N-\lambda M) &&&& \text{Raccoldo $M^{-1}$ e applico $\det(A*B) = \det(A)*\det(B)$}\\
+   &=\det(N-\lambda M) &&&& \text{Il $\det(M^{-1})\neq 0$ per costruzione ma noi cerchiamo lo 0}\\
+   \end{align*}
+   $$
+
+   Di conseguenza $\lambda \in \mathbb{C}$ e' autovalore di $P$ se e soltanto se $\det(N-\lambda M) = 0$
+
+   **SUPPONIAMO** che $|\lambda| \geq 1$ e dimostriamo che la matrice $\lambda M-N$ (posso cambiare di sengo perche' sto cercando lo $0$) e' predominante diagonale
+   $$
+   \begin{align*}
+   |a_{i,i}| &> \sum_{j=1,\ j\neq i}^n|a_{i,j}| = \underbracket{\sum_{j=1}^{i-1}|a_{i,j}|}_{\text{per $M$}} + \underbracket{\sum_{j=i+1}^{n}|a_{i,j}|}_{\text{per $N$}} &&&&\forall_i\ 1\leq i\leq n\tag{1}\\ \\
+   |\lambda||a_{i,i}| &>|\lambda|\sum_{j=1}^{i-1}|a_{i,j}| + |\lambda|\sum_{j=i+1}^{n}|a_{i,j}| &&&& \tag{2}\\
+   &> |\lambda|\sum_{j=1}^{i-1}|a_{i,j}| + \sum_{j=i+1}^{n}|a_{i,j}| &&&& \tag{3}\\
+   \end{align*}
+   $$
+
+   > [!IMPORTANT]
+   >
+   > $(1)$ spezzo la sommatoria nella parte sotto la diagonale piu' la parte sopra la diagonale
+   >
+   > $(2)$ moltiplico le componenti per $|\lambda|$ poiche sto lavoranto per $\lambda M-N$
+   >
+   > $(3)$ eliminando $|\lambda|$ dalla parte della sovradiagonale rilasso il problema e la disequazione rimane verificata
+
+   Riportando quanto trovato sui due metodi ottengo
+
+   - Per **Jacobi**
+     $$
+     \begin{align*}
+     |\lambda a_{i,i}| > \sum_{j=1}^{i-1}|a_{i,j}| + \sum_{j=i+1}^{n}|a_{i,j}|
+     \end{align*}
+     $$
+
+     > [!iMPORTANT]
+     >
+     > Ho rimosso $|\lambda|$ sulla prima sommatoria poiche' per Jacobi $M$ e' composta dalla diagonale principale di $A$ ma nella sommatoria non la considero
+
+   - Per **Gauss-Seidel**
+     $$
+     \begin{align*}
+     |\lambda a_{i,i}| > \sum_{j=1}^{i-1}|\lambda a_{i,j}| + \sum_{j=i+1}^{n}|a_{i,j}|
+     \end{align*}
+     $$
+
+   > [!CAUTION]
+   >
+   > Dalle relazioni segue che per $|\lambda| \geq 1$ la matrice $\lambda M -N$ rimande predominante diagonale per chui $\det(\lambda M-N)\neq0$ a differenza di quanto supposto all'inizio. Per cui $|\lambda| \geq 1$ non sono autovalori di $P$ e di conseguenza rimangono solo $|\lambda |<1\implies\rho (P)<1$ e quindi si ha consergenza
+
+   
 
 
 ---
