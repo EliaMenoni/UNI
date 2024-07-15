@@ -319,13 +319,143 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
 ---
 ### Teorema 10.1.1 - Metodo di Bisezione
 
+> [!CAUTION]
+>
+> ```matlab
+> a(1) = a;
+> b(1) = b;
+> for k >= 1
+> 	c(k) = (a(k) + b(k))/2;
+> 	if (f(a(k)) * f(b(k))) <= 0
+> 		a(k + 1) = a(k);
+> 		b(k + 1) = c(k);
+> 	else
+> 		a(k + 1) = c(k);
+> 		b(k + 1) = b(k);
+> 	end
+> end
+> ```
+
+Sia $f:[a,b]\to \R$ con $f\in C^0([a,b])$ e $f(a)f(b)<0$​, per le successioni generate da metodo di **bisezione** si ha:
+
+> [!NOTE]
+>
+>  $f\in C^0([a,b])$ indica una funzione continua su $[a,b]$ mentre  $f\in C^{1,2,\dots, \infty}([a,b])$ indica una funzione derivabile $1,2,\dots$ volte o $\infty$ (infinite volte) su $[a,b]$
+
+$$
+\begin{align*}
+\lim_{k\to\infty}a_k = \lim_{k\to\infty}b_k = \lim_{k\to\infty}c_k=\xi\in[a,b] &&&&\text{con } f(\xi)=0\tag{1}
+\end{align*}
+$$
+
 #### Dimostrazione
+
+Per costruzione $a_{k+1}\geq a_k$, $b_{k+1}\leq b_k$ e $c_{k} \in [a_k,b_k]\subset[a,b]$. Inoltre $0\leq b_k - a_k\leq (b-a)/2^{k-1}$ e $f(a_k)f(b_k)\leq 0$ per $k\geq 1$​
+
+Segue che $\exist \xi,\ \eta \in [a,b]$​ tali che
+$$
+\begin{align*}
+\lim_{k\to\infty}a_k = \xi&&e&&\lim_{k\to\infty}b_k=\eta\tag{2}
+\end{align*}
+$$
+Confrontando con $(1)$​ per il teorema del confronto si ottiene
+$$
+\begin{align*}
+\xi = \lim_{k\to\infty}a_k = \lim_{k\to\infty}b_k&=\eta\tag{2}\\
+&=\lim_{k\to\infty}c_k
+\end{align*}
+$$
+Di conseguenza
+$$
+\begin{align*}
+&\lim_{k\to\infty}f(a_k)f(b_k) =\lim_{k\to\infty}f(\xi)f(\xi) = f(\xi)^2 \leq 0\\ \\ \\
+\implies&f(\xi)=0
+\end{align*}
+$$
+
+> [!IMPORTANT]
+>
+> L'unico numero che elevato al quadrato fa $0$ e' lo $0$ stesso
 
 
 ---
 ### Teorema 10.2.2 - Teorema del Punto Fisso
 
+> [!CAUTION]
+>
+> Il metodo di iterazione funzionale fornito e'
+> $$
+> \begin{cases}
+>     x_0\in[a,b]\\
+>     x_{k+1}=g(x_k)&&k\geq0
+> \end{cases}
+> $$
+> Con $g(x)$ funzione **equivalente** di $f(x)$
+>
+> Data una funzione $f(x)=0$ e $g(x)-x=0$ questa si dicono **equivalenti** se $f(\xi) = 0 \Longleftrightarrow g(\xi) =\xi$ e $\xi$, radice dell'equazione $f(x)=0$, e' detta **punto fisso** di $g(x)$
+
+Sia $g:[a,b]\to \R,\ g\in C^1([a,b]),\ g(\xi)=\xi,\ \xi\in(a,b)$. Se $\exist\rho>0$ tale che $|g'(x)|<1\ \forall x\in[\xi-\rho, \xi+\rho]=I_\xi\subset[a,b]$ allora $\forall x_0\in I_\xi$ la successione generata dal metodo di iterazione funzionale soddisfa
+
+1. $x_k\in I_\xi$ per ogni $k\geq 0$
+2. $\lim_{k\to\infty}x_k=\xi$
+
 #### Dimostrazione
+
+Dal teorema di Weierstrass essendo $g'(x)$ continua e limitata su $I_\xi$ (intervallo chiuso e limitato) abbiamo
+$$
+\begin{align*}
+\lambda = \max_{k\in I_\xi}|g'(x)|<0\tag{1}
+\end{align*}
+$$
+
+
+Pertanto si dimostra che la successione geenerata a dartire da $x_0\in I_\xi$​ soddisfa
+$$
+\begin{align*}
+|x_k-\xi|\leq\lambda^k\rho&&&&k\geq0\tag{2}
+\end{align*}
+$$
+
+> [!NOTE]
+>
+> In parole stiamo dicendo che alla k-esima iterazione la distanza tra ila $x$ generata e la soluzione $\xi$ ($|x_k-\xi|$) e' minore $\lambda^k\rho$
+>
+> Nota bene che $\lambda < 1$ (per $(1)$) e per cui $\lambda^k\to0$ e $\rho$ e' il raggio dell'intorno
+
+Per cui $\lambda^k\rho\leq\rho$ ne segue da $(2)$ che le $x_k$ generate apprterrano ad un intorno di $\xi$ piu' piccolo $\implies x_k\in I_\xi$ ovvero il punto 1. del teorema
+
+Poiche' $\lambda^k\to 0$ e $0\leq|x_k-\xi|\leq\lambda^k\rho$ avremo che $0\leq|x_k-\xi|\leq 0$ e quindi $\lim_{k\to\infty}|x_k-\xi|=0$ ovvero il punto 2. del teorema
+
+Per dimostrare $(2)$ procediamo per induzione su $k$
+
+1. Per $k=0$ da $x_0\in I_\xi$ si ha
+   $$
+   \begin{align*}
+   |x_k-\xi|\leq\lambda^0\rho=\rho
+   \end{align*}
+   $$
+   Ok per ipotesi $(2)$
+
+2. Assumiamo l'ipotesi vera fino all'indice $k$​, per il teorema di **Lagrange**
+
+   > [!NOTE]
+   >
+   > Lagrange dice che $f'(\eta)=\frac{f(a)-f(b)}{a-b}$
+   >
+   > Nel nostro caso $g'(\eta)(x_k-\xi)=\frac{g(x_k)-g(\xi)}{x_k-\xi}(x_k-\xi)=g(x_k)-g(\xi)$
+
+   $$
+   \begin{align*}
+   |x_{k+1}-\xi| = |g(x_k)-g(\xi)|=|g'(\eta_k)(x_k-\xi)|=|g'(\eta_k)||(x_k-\xi)|
+   \end{align*}
+   $$
+
+   Per ipotesi induttiva $\eta_k\in I_\xi$ e dunque
+   $$
+   \begin{align*}
+   |x_{k+1}-\xi| = |g'(\eta_k)||(x_k-\xi)| \leq \lambda\lambda^k\rho=\lambda^{k+1}\rho
+   \end{align*}
+   $$
 
 
 ---
