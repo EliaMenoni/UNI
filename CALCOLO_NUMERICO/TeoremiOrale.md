@@ -34,7 +34,10 @@ $$
 \end{align*}
 $$
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 4.4.1 - Cerchi di Gershgorin
+
 Sia $A\in\mathbb{C}^{n\times n}$. Definiamo di **Cerchi di Gershgorin** $K_i\ \forall\ 1\leq i\leq n$ come
 $$
 \begin{align*}
@@ -84,7 +87,10 @@ $$
 Da cui la tesi
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 5.1.1 - Esistenza e Unicità di LU
+
 Data $A\in\R^{n\times n}$. Se $A(1:k, 1:k)$ e' invertibile $\forall\ 1\leq k\leq n-1$ allora esiste unica ($\exist!$) $LU$ di $A$ 
 #### Dimostrazione
 Per induzione su $n$
@@ -136,7 +142,10 @@ Sempre dall'invertibilita' di $A(1:n-1,1:n-1)$ segue che
 Di conseguenza le equazioni $(2)$ e $(3)$ del teorema ammetto unica soluzione. Anche l'equazione $(4)$ ammette unica soluzione poiche' conseguenza delle equazioni precedenti
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 6.1.2 - Convergenza dei Metodi Iterativi (Cond. Suff.)
+
 Dato il metodo iterativo
 $$
 \begin{cases}
@@ -195,7 +204,10 @@ $$
 $$
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 6.1.3 - Convergenza per Raggio Spettrale (Cond. Nec. e Suff.)
+
 Dato il metodo iterativo
 $$
 \begin{cases}
@@ -213,6 +225,8 @@ Se $\rho(P)<1$ allora il metodo e' convergente
 > Dove $\rho(A) = \max_i|\lambda_i|$ con $\lambda_1, \lambda_2, \dots, \lambda_n$ autovalori di $A$ e' detto **raggio spettrale di $A$**
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 6.3.1 - Convergenza di Jacobi e Gauss-Seidel
 
 Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale allora
@@ -239,7 +253,7 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
    |0-a_{i,i}| = |a_{i,i}| < \sum_{j=1,\ j\neq i}^n|a_{i,j}| &&&&\forall_i\ 1\leq i\leq n
    \end{align*}
    $$
-   Ma per definizione di **predominanza diagonale** le equazioni cosi' costruite non vengono mai verificate, per cui $0\notin\bigcup_{i=1}^nK_i$
+   Ma per definizione di **predominanza diagonale** le equazioni cosi' costruite non vengono mai verificate, per cui $0\notin\bigcup_{i=1}^nK_i$​
 
 2. L'applicabilita' di **Jacobi** e **Gauss-Seidel** si ha poiche'
    $$
@@ -250,9 +264,11 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
 
    > [!TIP]
    >
-   > Prendiamo $|a| > |b| + \dots + |z|$ supponendo che la somma sia $0$ questo implica che $|a|>0 \implies a\neq0$. Infatti una matrice che ha almeno uno $0$ sulla diagonale principale sicuramente **non** e' predominante diagonale. Unendo questo ragionamento all'applicabilita' di Jacobi e GS si ottiene che per $A$ predominanti diagonali i due metodi sono sempre applicabili
+   > Prendiamo $|a| > |b| + \dots + |z|$ supponendo che la somma sia $0$ questo implica che $|a|>0 \implies a\neq0$. Infatti una matrice che ha almeno uno $0$ sulla diagonale principale sicuramente **non** e' predominante diagonale. Unendo questo ragionamento all'applicabilita' di Jacobi e GS si ottiene che per $A$​ predominanti diagonali i due metodi sono sempre applicabili
 
-3. Per dimostrare la convergenza di **Jacobi** e **Gauss-Seidel** su matrici predominanti diagonali studiamo il polinomio caratteristico della matrice $P$
+<div style="page-break-after: always; break-after: page;"></div>
+
+3. Per dimostrare la convergenza di **Jacobi** e **Gauss-Seidel** su matrici predominanti diagonali studiamo il polinomio caratteristico della matrice $
 
    > [!NOTE]
    >
@@ -263,10 +279,10 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
 
    $$
    \begin{align*}
-   \det(P-\lambda I_n) &= &&&& \text{Formula del polinomio caratteristico di }P\\
+   \det(P-\lambda I_n) &= &&&& \text{Polinomio caratteristico di }P\\
    &=\det(M^{-1}N-\lambda MM^{-1}) &&&& \text{Riscrivo $P$ e $I$ in funzione di $M$}\\
-   &=\det(M^{-1})\det(N-\lambda M) &&&& \text{Raccoldo $M^{-1}$ e applico $\det(A*B) = \det(A)*\det(B)$}\\
-   &=\det(N-\lambda M) &&&& \text{Il $\det(M^{-1})\neq 0$ per costruzione ma noi cerchiamo lo 0}\\
+   &=\det(M^{-1})\det(N-\lambda M) &&&& \text{Raccoldo e $\det(A*B) = \det(A)*\det(B)$}\\
+   &=\det(N-\lambda M) &&&& \text{Il $\det(M^{-1})\neq 0$, cerchiamo lo 0}\\
    \end{align*}
    $$
 
@@ -287,7 +303,9 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
    >
    > $(2)$ moltiplico le componenti per $|\lambda|$ poiche sto lavoranto per $\lambda M-N$
    >
-   > $(3)$ eliminando $|\lambda|$ dalla parte della sovradiagonale rilasso il problema e la disequazione rimane verificata
+   > $(3)$ eliminando $|\lambda|$​ dalla parte della sovradiagonale rilasso il problema e la disequazione rimane verificata
+
+<div style="page-break-after: always; break-after: page;"></div>
 
    Riportando quanto trovato sui due metodi ottengo
 
@@ -300,7 +318,7 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
 
      > [!iMPORTANT]
      >
-     > Ho rimosso $|\lambda|$ sulla prima sommatoria poiche' per Jacobi $M$ e' composta dalla diagonale principale di $A$ ma nella sommatoria non la considero
+     > Ho rimosso $|\lambda|$ sulla prima sommatoria poiche' per Jacobi $M$ e' composta dalla diagonale principale di $A$​ ma nella sommatoria non la considero
 
    - Per **Gauss-Seidel**
      $$
@@ -313,10 +331,12 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
    >
    > Dalle relazioni segue che per $|\lambda| \geq 1$ la matrice $\lambda M -N$ rimande predominante diagonale per chui $\det(\lambda M-N)\neq0$ a differenza di quanto supposto all'inizio. Per cui $|\lambda| \geq 1$ non sono autovalori di $P$ e di conseguenza rimangono solo $|\lambda |<1\implies\rho (P)<1$ e quindi si ha consergenza
 
-   
+
 
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 10.1.1 - Metodo di Bisezione
 
 > [!CAUTION]
@@ -379,6 +399,8 @@ $$
 
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 10.2.2 - Teorema del Punto Fisso
 
 > [!CAUTION]
@@ -422,9 +444,11 @@ $$
 >
 > Nota bene che $\lambda < 1$ (per $(1)$) e per cui $\lambda^k\to0$ e $\rho$ e' il raggio dell'intorno
 
-Per cui $\lambda^k\rho\leq\rho$ ne segue da $(2)$ che le $x_k$ generate apprterrano ad un intorno di $\xi$ piu' piccolo $\implies x_k\in I_\xi$ ovvero il punto 1. del teorema
+Per cui $\lambda^k\rho\leq\rho$ ne segue da $(2)$ che le $x_k$ generate appartengono ad un intorno di $\xi$ piu' piccolo $\implies x_k\in I_\xi$ ovvero il punto 1. del teorema
 
 Poiche' $\lambda^k\to 0$ e $0\leq|x_k-\xi|\leq\lambda^k\rho$ avremo che $0\leq|x_k-\xi|\leq 0$ e quindi $\lim_{k\to\infty}|x_k-\xi|=0$ ovvero il punto 2. del teorema
+
+<div style="page-break-after: always; break-after: page;"></div>
 
 Per dimostrare $(2)$ procediamo per induzione su $k$
 
@@ -459,13 +483,74 @@ Per dimostrare $(2)$ procediamo per induzione su $k$
 
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 10.2.3 - Convergenza Locale dei Metodi di Iterazione Funzionale
 
+Sia $g:[a,b]\to\R,\ g\in C^2([a,b]),\ g(\xi)=\xi,\ \xi\in(a,b)$ se $|g'(\xi)|<1$ allora il metodo e' localmente convergente in $\xi$
+
 #### Dimostrazione
+
+Sia $h:[a,b]\to \R,\ h(x)=|g'(x)|-1$.
+
+Si ha che $h\in C^0([a,b]),\ h(\xi) = |g'(\xi)| - 1 < 0$ e dunque per il teorema della permanenza del segno $\exist I_\xi=[\xi-\rho,\xi+\rho]\subset[a,b]$ tale che $h(x) = |g'(x)| - 1<0\ \forall x\in I_\xi$​ 
+
+Pertanto la tesi segue dal teorema 10.2.2
 
 
 ---
+<div style="page-break-after: always; break-after: page;"></div>
+
 ### Teorema 10.3.1 - Convergenza Locale per Radici Semplici
+
+> [!CAUTION]
+>
+> Metodo di iterazione fornito (**tangenti**)
+> $$
+> \begin{cases}
+>  x_0\in[a,b]\\
+>  x_{k+1}=g(x_k)=x_k-\frac{f(x_k)}{f'(x_k)}&&k\geq0
+> \end{cases}
+> $$
+> 
+
+Sia $f:[a,b]\to\R,\ f\in C^2([a,b]),\ f(\xi)=0,\ f'(\xi)\neq0,\ \xi\in(a,b)$
+
+Allora il metodo e' localmente convergente in $\xi$ e $\exist\rho>0$ tale che $\forall x_0\in[\xi-\rho, \xi+\rho]=I_\xi\subset[a,b]$ la successione generata soddisfa
+
+1. $x_k\in I_k$ per ogni $k\geq0$
+2. $\lim_{k\to\infty}x_k=\xi$
+
+Se inosltre la successione verifica $x_k\neq\xi,\ k\geq 0$ allora la convergenza e' almeno quadratica
+$$
+\begin{align*}
+\lim_{k\to\infty}\frac{|x_{k+1}-\xi|}{|x_k-\xi|^2}
+\end{align*}
+$$
 
 #### Dimostrazione
 
+Da $f'(\xi)\neq0$ per il teorema della permanenza del segno segue che $\exist I_{\xi}'=[\xi-\rho',\xi+\rho']\subset[a,b]$ tale che $f'(x)\neq0\ \forall x\in I_\xi'$​
+
+> [!important]
+>
+> Stiamo dicendo che la derivata nel punto $\xi$ non si annulla e per tali motivi esiste un intorno di $\xi$ in cui la derivata non si annulla
+
+Da questo segue che $g:I'_{\xi}\to \R,\ g(x)=x-\frac{f(x)}{f'(x)}$ e' ben definita e soddisfa $g\in C^1(I_\xi')$ con $g'(x)=\frac{f(x)f''(x)}{f'(x)^2}$
+
+Poiche' $g'(\xi)=\frac{f(\xi)f''(\xi)}{f'(\xi)^2}=\frac{0}{f'(x)^2}=0$ (per costruzione di $g'$) i punti 1. e 2. sono verificati dal teorema **10.2.3** (Per $|g'(\xi)|<1$ ok 1., ok 2.)
+
+Per la stima della velocita' di convergenza dallo sviluppo di tailor al secondo ordine
+$$
+\begin{align*}
+&&0=f(\xi)=f(x_k)+f'(x_k)(\xi-x_k)+\frac{f''(\eta_k)(\xi-x_k)^2}{2}\\
+\text{SEGUE}&\\
+&&x_{k+1}-\xi =\frac{f''(\eta_k)(\xi-x_k)^2}{2f'(x_k)}
+\end{align*}
+$$
+Per continuita' di $f'(x)$ e $f''(x)$
+$$
+\begin{align*}
+\lim_{k\to\infty}\frac{|x_{k+1}-\xi|}{|x_k-\xi|^2} = \left|\frac{f''(\xi)}{2f'(\xi)}\right|\in\R
+\end{align*}
+$$
