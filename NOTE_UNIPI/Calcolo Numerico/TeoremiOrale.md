@@ -1,7 +1,7 @@
 # Teoremi e Dimostrazioni orale Gemignani
 
 ### Teorema 2.2.1 - Errore inerente
-Sia $x\in\R$ con $\omega\leq |x| \leq\Omega$ *(no **underflow/overflow**)*, si ha:
+Sia $x\in\mathbb{R}$ con $\omega\leq |x| \leq\Omega$ *(no **underflow/overflow**)*, si ha:
 $$
 \begin{align}
     |\epsilon_{in}| &= \left|\frac{trn(x)-x}{x}\right| & \leq u&=\beta^{1-t}\\
@@ -91,7 +91,7 @@ Da cui la tesi
 
 ### Teorema 5.1.1 - Esistenza e Unicità di LU
 
-Data $A\in\R^{n\times n}$. Se $A(1:k, 1:k)$ e' invertibile $\forall\ 1\leq k\leq n-1$ allora esiste unica ($\exist!$) $LU$ di $A$ 
+Data $A\in\mathbb{R}^{n\times n}$. Se $A(1:k, 1:k)$ e' invertibile $\forall\ 1\leq k\leq n-1$ allora esiste unica ($\exists!$) $LU$ di $A$ 
 #### Dimostrazione
 Per induzione su $n$
 1. Per $n=1$ si ha $A=[a]=[1][a]$ unica fattorizzazione $LU$ di $A$
@@ -127,7 +127,7 @@ $$
 \end{cases}
 $$
 
-Per ipotesi $A(1:n-1,1:n-1)$ invertibile e per tale motivo $\exist!LU$ con fattori triangolari (equazione $(1)$ del sistema)
+Per ipotesi $A(1:n-1,1:n-1)$ invertibile e per tale motivo $\exists!LU$ con fattori triangolari (equazione $(1)$ del sistema)
 - $L(1:n-1,1:n-1)$ 
 - $U(1:n-1,1:n-1)$ 
 
@@ -135,9 +135,8 @@ Sempre dall'invertibilita' di $A(1:n-1,1:n-1)$ segue che
 1. $L(1:n-1,1:n-1)$ e' invertibile per costruzione
 2. $U(1:n-1,1:n-1)$ e' invertibile
    
-    > [!IMPORTANT]
-    >
-    > $\det(A)=\det(LU)=\det(L)*\det(U)$ e $\det(L)=1$ per costruzione. Segue che $\det(A)=\det(U)$, se $\det(A)\neq 0\implies\det(U)\neq 0$
+>[!IMPORTANT]
+> $\det(A)=\det(LU)=\det(L)*\det(U)$ e $\det(L)=1$ per costruzione. Segue che $\det(A)=\det(U)$, se $\det(A)\neq 0\implies\det(U)\neq 0$
 
 Di conseguenza le equazioni $(2)$ e $(3)$ del teorema ammetto unica soluzione. Anche l'equazione $(4)$ ammette unica soluzione poiche' conseguenza delle equazioni precedenti
 
@@ -149,7 +148,7 @@ Di conseguenza le equazioni $(2)$ e $(3)$ del teorema ammetto unica soluzione. A
 Dato il metodo iterativo
 $$
 \begin{cases}
-    x^{(0)}\in\R^n&&&&(1)\\
+    x^{(0)}\in\mathbb{R}^n&&&&(1)\\
     x^{(k+1)}=Px^{(k)}+q&&k\geq 0&&(2)
 \end{cases}
 $$
@@ -157,7 +156,7 @@ $$
 >
 > Con $P=M^{-1}N$, $\ q=M^{-1}b$, $\ A=M-N$
 
-Il metodo converse se esiste ($\exist$) una norma matriciale indotta su $\R^n$ t.c. $\|P\|<1$
+Il metodo converse se esiste ($\exists$) una norma matriciale indotta su $\mathbb{R}^n$ t.c. $\|P\|<1$
 
 #### Dimostrazione
 Prese le relazioni
@@ -211,7 +210,7 @@ $$
 Dato il metodo iterativo
 $$
 \begin{cases}
-    x^{(0)}\in\R^n&&&&(1)\\
+    x^{(0)}\in\mathbb{R}^n&&&&(1)\\
     x^{(k+1)}=Px^{(k)}+q&&k\geq 0&&(2)
 \end{cases}
 $$
@@ -229,11 +228,11 @@ Se $\rho(P)<1$ allora il metodo e' convergente
 
 ### Teorema 6.3.1 - Convergenza di Jacobi e Gauss-Seidel
 
-Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale allora
+Data una matrice $A\in\mathbb{R}^{n\times n}$​, se questa e' predominante diagonale allora
 
 > [!NOTE]
 >
-> Una matrice $A\in\R^{n\times n}$ si dice **predominante diagonale** se $\forall_i\ 1\leq i\leq n\ \ |a_{i,i}| > \sum_{j=1,\ j\neq i}^n|a_{i,j}|$ ovvero: i moduli degli elementi diagonali sono maggiori della somma dei moduli di ogni riga
+> Una matrice $A\in\mathbb{R}^{n\times n}$ si dice **predominante diagonale** se $\forall_i\ 1\leq i\leq n\ \ |a_{i,i}| > \sum_{j=1,\ j\neq i}^n|a_{i,j}|$ ovvero: i moduli degli elementi diagonali sono maggiori della somma dei moduli di ogni riga
 
 1. $A$ e' invertibile
 
@@ -356,7 +355,7 @@ Data una matrice $A\in\R^{n\times n}$​, se questa e' predominante diagonale al
 > end
 > ```
 
-Sia $f:[a,b]\to \R$ con $f\in C^0([a,b])$ e $f(a)f(b)<0$​, per le successioni generate da metodo di **bisezione** si ha:
+Sia $f:[a,b]\to \mathbb{R}$ con $f\in C^0([a,b])$ e $f(a)f(b)<0$​, per le successioni generate da metodo di **bisezione** si ha:
 
 > [!NOTE]
 >
@@ -372,7 +371,7 @@ $$
 
 Per costruzione $a_{k+1}\geq a_k$, $b_{k+1}\leq b_k$ e $c_{k} \in [a_k,b_k]\subset[a,b]$. Inoltre $0\leq b_k - a_k\leq (b-a)/2^{k-1}$ e $f(a_k)f(b_k)\leq 0$ per $k\geq 1$​
 
-Segue che $\exist \xi,\ \eta \in [a,b]$​ tali che
+Segue che $\exists \xi,\ \eta \in [a,b]$​ tali che
 $$
 \begin{align*}
 \lim_{k\to\infty}a_k = \xi&&e&&\lim_{k\to\infty}b_k=\eta\tag{2}
@@ -416,7 +415,7 @@ $$
 >
 > Data una funzione $f(x)=0$ e $g(x)-x=0$ questa si dicono **equivalenti** se $f(\xi) = 0 \Longleftrightarrow g(\xi) =\xi$ e $\xi$, radice dell'equazione $f(x)=0$, e' detta **punto fisso** di $g(x)$
 
-Sia $g:[a,b]\to \R,\ g\in C^1([a,b]),\ g(\xi)=\xi,\ \xi\in(a,b)$. Se $\exist\rho>0$ tale che $|g'(x)|<1\ \forall x\in[\xi-\rho, \xi+\rho]=I_\xi\subset[a,b]$ allora $\forall x_0\in I_\xi$ la successione generata dal metodo di iterazione funzionale soddisfa
+Sia $g:[a,b]\to \mathbb{R},\ g\in C^1([a,b]),\ g(\xi)=\xi,\ \xi\in(a,b)$. Se $\exists\rho>0$ tale che $|g'(x)|<1\ \forall x\in[\xi-\rho, \xi+\rho]=I_\xi\subset[a,b]$ allora $\forall x_0\in I_\xi$ la successione generata dal metodo di iterazione funzionale soddisfa
 
 1. $x_k\in I_\xi$ per ogni $k\geq 0$
 2. $\lim_{k\to\infty}x_k=\xi$
@@ -487,13 +486,13 @@ Per dimostrare $(2)$ procediamo per induzione su $k$
 
 ### Teorema 10.2.3 - Convergenza Locale dei Metodi di Iterazione Funzionale
 
-Sia $g:[a,b]\to\R,\ g\in C^2([a,b]),\ g(\xi)=\xi,\ \xi\in(a,b)$ se $|g'(\xi)|<1$ allora il metodo e' localmente convergente in $\xi$
+Sia $g:[a,b]\to\mathbb{R},\ g\in C^2([a,b]),\ g(\xi)=\xi,\ \xi\in(a,b)$ se $|g'(\xi)|<1$ allora il metodo e' localmente convergente in $\xi$
 
 #### Dimostrazione
 
-Sia $h:[a,b]\to \R,\ h(x)=|g'(x)|-1$.
+Sia $h:[a,b]\to \mathbb{R},\ h(x)=|g'(x)|-1$.
 
-Si ha che $h\in C^0([a,b]),\ h(\xi) = |g'(\xi)| - 1 < 0$ e dunque per il teorema della permanenza del segno $\exist I_\xi=[\xi-\rho,\xi+\rho]\subset[a,b]$ tale che $h(x) = |g'(x)| - 1<0\ \forall x\in I_\xi$​ 
+Si ha che $h\in C^0([a,b]),\ h(\xi) = |g'(\xi)| - 1 < 0$ e dunque per il teorema della permanenza del segno $\exists I_\xi=[\xi-\rho,\xi+\rho]\subset[a,b]$ tale che $h(x) = |g'(x)| - 1<0\ \forall x\in I_\xi$​ 
 
 Pertanto la tesi segue dal teorema 10.2.2
 
@@ -514,9 +513,9 @@ Pertanto la tesi segue dal teorema 10.2.2
 > $$
 > 
 
-Sia $f:[a,b]\to\R,\ f\in C^2([a,b]),\ f(\xi)=0,\ f'(\xi)\neq0,\ \xi\in(a,b)$
+Sia $f:[a,b]\to\mathbb{R},\ f\in C^2([a,b]),\ f(\xi)=0,\ f'(\xi)\neq0,\ \xi\in(a,b)$
 
-Allora il metodo e' localmente convergente in $\xi$ e $\exist\rho>0$ tale che $\forall x_0\in[\xi-\rho, \xi+\rho]=I_\xi\subset[a,b]$ la successione generata soddisfa
+Allora il metodo e' localmente convergente in $\xi$ e $\exists\rho>0$ tale che $\forall x_0\in[\xi-\rho, \xi+\rho]=I_\xi\subset[a,b]$ la successione generata soddisfa
 
 1. $x_k\in I_k$ per ogni $k\geq0$
 2. $\lim_{k\to\infty}x_k=\xi$
@@ -530,13 +529,13 @@ $$
 
 #### Dimostrazione
 
-Da $f'(\xi)\neq0$ per il teorema della permanenza del segno segue che $\exist I_{\xi}'=[\xi-\rho',\xi+\rho']\subset[a,b]$ tale che $f'(x)\neq0\ \forall x\in I_\xi'$​
+Da $f'(\xi)\neq0$ per il teorema della permanenza del segno segue che $\exists I_{\xi}'=[\xi-\rho',\xi+\rho']\subset[a,b]$ tale che $f'(x)\neq0\ \forall x\in I_\xi'$​
 
 > [!important]
 >
 > Stiamo dicendo che la derivata nel punto $\xi$ non si annulla e per tali motivi esiste un intorno di $\xi$ in cui la derivata non si annulla
 
-Da questo segue che $g:I'_{\xi}\to \R,\ g(x)=x-\frac{f(x)}{f'(x)}$ e' ben definita e soddisfa $g\in C^1(I_\xi')$ con $g'(x)=\frac{f(x)f''(x)}{f'(x)^2}$
+Da questo segue che $g:I'_{\xi}\to \mathbb{R},\ g(x)=x-\frac{f(x)}{f'(x)}$ e' ben definita e soddisfa $g\in C^1(I_\xi')$ con $g'(x)=\frac{f(x)f''(x)}{f'(x)^2}$
 
 Poiche' $g'(\xi)=\frac{f(\xi)f''(\xi)}{f'(\xi)^2}=\frac{0}{f'(x)^2}=0$ (per costruzione di $g'$) i punti 1. e 2. sono verificati dal teorema **10.2.3** (Per $|g'(\xi)|<1$ ok 1., ok 2.)
 
@@ -551,6 +550,6 @@ $$
 Per continuita' di $f'(x)$ e $f''(x)$
 $$
 \begin{align*}
-\lim_{k\to\infty}\frac{|x_{k+1}-\xi|}{|x_k-\xi|^2} = \left|\frac{f''(\xi)}{2f'(\xi)}\right|\in\R
+\lim_{k\to\infty}\frac{|x_{k+1}-\xi|}{|x_k-\xi|^2} = \left|\frac{f''(\xi)}{2f'(\xi)}\right|\in\mathbb{R}
 \end{align*}
 $$
