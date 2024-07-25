@@ -1,6 +1,11 @@
+---
+CORSO: Calcolo Numerico
+CFU: "9"
+PROF: Luca Gemignani
+---
 # Teoremi e Dimostrazioni orale Gemignani
 
-### Teorema 2.2.1 - Errore inerente
+### Teorema 2.2.1 - Errore inerente [[Calcolo Errore Inerente.pdf| (CARD)]]
 Sia $x\in\mathbb{R}$ con $\omega\leq |x| \leq\Omega$ *(no **underflow/overflow**)*, si ha:
 $$
 \begin{align}
@@ -22,7 +27,7 @@ $$
 \end{align}
 $$
 ---
-### Teorema 3.1.1 - Errore totale
+### Teorema 3.1.1 - Errore totale [[Errore Inerente Algoritmico e Totale.pdf| (CARD) ]]
 $\epsilon_{tot}=\epsilon_{in}+\epsilon_{alg}$
 #### Dimostrazione
 $$
@@ -36,7 +41,7 @@ $$
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 4.4.1 - Cerchi di Gershgorin
+### Teorema 4.4.1 - Cerchi di Gershgorin [[Teorema di Gershgorin.pdf| (CARD) ]]
 
 Sia $A\in\mathbb{C}^{n\times n}$. Definiamo di **Cerchi di Gershgorin** $K_i\ \forall\ 1\leq i\leq n$ come
 $$
@@ -89,7 +94,7 @@ Da cui la tesi
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 5.1.1 - Esistenza e Unicità di LU
+### Teorema 5.1.1 - Esistenza e Unicità di LU [[Fattorizzazione LU.pdf| (CARD)]]
 
 Data $A\in\mathbb{R}^{n\times n}$. Se $A(1:k, 1:k)$ e' invertibile $\forall\ 1\leq k\leq n-1$ allora esiste unica ($\exists!$) $LU$ di $A$ 
 #### Dimostrazione
@@ -143,7 +148,7 @@ Di conseguenza le equazioni $(2)$ e $(3)$ del teorema ammetto unica soluzione. A
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 6.1.2 - Convergenza dei Metodi Iterativi (Cond. Suff.)
+### Teorema 6.1.2 - Convergenza dei Metodi Iterativi (Cond. Suff.) [[CS Convergenza dei Metodi Iterativi.pdf| (CARD)]]
 
 Dato il metodo iterativo
 $$
@@ -205,7 +210,7 @@ $$
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 6.1.3 - Convergenza per Raggio Spettrale (Cond. Nec. e Suff.)
+### Teorema 6.1.3 - Convergenza per Raggio Spettrale (Cond. Nec. e Suff.) [[CNS Convergenza dei Metodi Iterativi.pdf| (CARD)]]
 
 Dato il metodo iterativo
 $$
@@ -226,7 +231,7 @@ Se $\rho(P)<1$ allora il metodo e' convergente
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 6.3.1 - Convergenza di Jacobi e Gauss-Seidel
+### Teorema 6.3.1 - Convergenza di Jacobi e Gauss-Seidel [[CS Convergenza di Jacobi e Gauss-Seidel.pdf| (CARD)]]
 
 Data una matrice $A\in\mathbb{R}^{n\times n}$​, se questa e' predominante diagonale allora
 
@@ -330,13 +335,10 @@ Data una matrice $A\in\mathbb{R}^{n\times n}$​, se questa e' predominante diag
    >
    > Dalle relazioni segue che per $|\lambda| \geq 1$ la matrice $\lambda M -N$ rimande predominante diagonale per chui $\det(\lambda M-N)\neq0$ a differenza di quanto supposto all'inizio. Per cui $|\lambda| \geq 1$ non sono autovalori di $P$ e di conseguenza rimangono solo $|\lambda |<1\implies\rho (P)<1$ e quindi si ha consergenza
 
-
-
-
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 10.1.1 - Metodo di Bisezione
+### Teorema 10.1.1 - Metodo di Bisezione [[Metodo di Bisezione.pdf| (CARD)]]
 
 > [!CAUTION]
 >
@@ -400,7 +402,7 @@ $$
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 10.2.2 - Teorema del Punto Fisso
+### Teorema 10.2.2 - Teorema del Punto Fisso [[Teorema del Punto Fisso.pdf| (CARD)]]
 
 > [!CAUTION]
 >
@@ -484,7 +486,7 @@ Per dimostrare $(2)$ procediamo per induzione su $k$
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 10.2.3 - Convergenza Locale dei Metodi di Iterazione Funzionale
+### Teorema 10.2.3 - Convergenza Locale dei Metodi di Iterazione Funzionale [[Metodi di Iterazione Funzionale.pdf| (CARD)]]
 
 Sia $g:[a,b]\to\mathbb{R},\ g\in C^2([a,b]),\ g(\xi)=\xi,\ \xi\in(a,b)$ se $|g'(\xi)|<1$ allora il metodo e' localmente convergente in $\xi$
 
@@ -500,7 +502,7 @@ Pertanto la tesi segue dal teorema 10.2.2
 ---
 <div style="page-break-after: always; break-after: page;"></div>
 
-### Teorema 10.3.1 - Convergenza Locale per Radici Semplici
+### Teorema 10.3.1 - Convergenza Locale per Radici Semplici [[Teorema di Convergenza Locale per Tangenti.pdf| (CARD)]]
 
 > [!CAUTION]
 >
