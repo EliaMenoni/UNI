@@ -1,4 +1,4 @@
-package RETI_DI_CALCOLATORI.Esercitazioni.L01_AS01;
+package RETI_DI_CALCOLATORI.Esercitazioni.Lezione_1.AS01;
 
 public class PyThread implements Runnable {
     double soglia;
