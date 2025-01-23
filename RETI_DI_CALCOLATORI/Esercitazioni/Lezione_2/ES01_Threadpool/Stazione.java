@@ -20,5 +20,6 @@ public class Stazione {
             }
         }
         executor.shutdown();
+        executor.close();
     }
 }

@@ -27,5 +27,6 @@ public class UfficioPostale {
             } catch (Exception e) {}
         }
         ufficio.shutdown();
+        ufficio.close();
     }
 }
