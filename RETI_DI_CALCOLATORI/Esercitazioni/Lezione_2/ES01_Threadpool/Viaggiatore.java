@@ -2,16 +2,22 @@ package RETI_DI_CALCOLATORI.Esercitazioni.Lezione_2.ES01_Threadpool;
 
 public class Viaggiatore implements Runnable {
     int attesa;
-    
-    public Viaggiatore(int attesa) {
+    int id;
+        
+    public Viaggiatore(int id, int attesa) {
+        this.id = id;
         this.attesa = attesa;
     }
 
     @Override
     public void run() {
-        System.out.println("Vaiggiatore " + Thread.currentThread().getName() + " sta acquistando un bliglietto");
-        Thread.sleep(attesa);
-        System.out.println("Vaiggiatore " + Thread.currentThread().getName() + " ha acquistato un bliglietto");
+        System.out.println("Vaiggiatore " + this.id + " sta acquistando un bliglietto");
+        try {
+            Thread.sleep(attesa);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Vaiggiatore " + this.id + " ha acquistato un bliglietto");
     }
     
 }
