@@ -6,10 +6,10 @@ public class PyCalculator {
 
         // gestione input argomento
         // try {
-        //     soglia = new Float(args[1]);
+        // soglia = new Float(args[1]);
         // } catch (Exception e) {
-        //     System.out.println("Valore di soglia mancante");
-        //     return;
+        // System.out.println("Valore di soglia mancante");
+        // return;
         // }
 
         PyThread calcolatore = new PyThread(soglia);

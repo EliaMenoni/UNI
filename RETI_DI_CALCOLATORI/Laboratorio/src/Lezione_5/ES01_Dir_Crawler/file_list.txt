@@ -1,0 +1,4 @@
+./Test/Sub/Sub2/prova.txt
+./Test/Sub/Sub2/prova2.txt
+./Test/Sub/Test4.txt
+./Test/prova.txt

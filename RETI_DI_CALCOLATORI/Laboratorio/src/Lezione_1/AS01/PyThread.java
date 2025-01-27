@@ -12,15 +12,14 @@ public class PyThread implements Runnable {
     public void run() {
         double i = 1;
         System.out.println("Soglia\t\tFrazione Calcolata\tValore PI");
-        while (Math.abs(Math.PI - this.pi) >= this.soglia) {            
-            this.pi += 4.0/i;
+        while (Math.abs(Math.PI - this.pi) >= this.soglia) {
+            this.pi += 4.0 / i;
 
             if (i < 0) {
-                System.out.println(this.soglia + "\t\t-4/" + (int)i*-1 + "\t\t\t" + this.pi);
+                System.out.println(this.soglia + "\t\t-4/" + (int) i * -1 + "\t\t\t" + this.pi);
                 i -= 2;
-            }
-            else {
-                System.out.println(this.soglia + "\t\t 4/" + (int)i + "\t\t\t" + this.pi);
+            } else {
+                System.out.println(this.soglia + "\t\t 4/" + (int) i + "\t\t\t" + this.pi);
                 i += 2;
             }
 
